@@ -263,8 +263,7 @@
 		},
 
 		_createHandle: function(options){
-			return $("<div />")
-				[this._handleType()](options)
+			return $("<div />")[this._handleType()](options)
 				.bind("sliderDrag", $.proxy(this._changing, this))
 				.bind("stop", $.proxy(this._changed, this));
 		},
@@ -473,8 +472,7 @@
 			if (label === null){
 				params = this._getLabelConstructorParameters(label, handle);
 				label = $("<div />")
-					.appendTo(this.element)
-					[this._labelType()](params);
+					.appendTo(this.element)[this._labelType()](params);
 			}else{
 				params = this._getLabelRefreshParameters(label, handle);
 
@@ -507,7 +505,7 @@
 		},
 
 		_getFormatter: function(){
-			if (this.options.formatter === false || this.options.formatter === null){
+			if (this.options.formatter === false || this.options.formatter === null){
 				return this._defaultFormatter;
 			}
 
@@ -651,7 +649,7 @@
 		values: function(min, max){
 			var val;
 
-			if (typeof min !== "undefined" && typeof max !== "undefined"){
+			if (typeof min !== "undefined" && typeof max !== "undefined"){
 				if (!this._initialized){
 					this._values.min = min;
 					this._values.max = max;
